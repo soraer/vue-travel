@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick' // 安装fastclick 解决移动端点击300毫秒延时问题
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'styles/reset.css'  //重置不同手机得默认值不同问题
 import 'styles/border.css'  //解决移动端1像素边框问题
 import 'styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 /* eslint-disable no-new */
 new Vue({
