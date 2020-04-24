@@ -20,58 +20,14 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      list: [ 
-          {
-            id: '001',
-            imgUrl: 'https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png',
-            desc: '民宿客栈'
-          },
-          {
-            id: '002',
-            imgUrl: 'https://picbed.qunarzz.com/83af731055e121a3251690b225327b56.png',
-            desc: '专车自驾'
-          },
-          {
-            id: '003',
-            imgUrl: 'https://picbed.qunarzz.com/5b6737be49ca243072ca614f07803b83.png',
-            desc: '赚钱·信用卡'
-          },
-          {
-            id: '004',
-            imgUrl: 'https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png',
-            desc: '旅游团购'
-          },
-          {
-            id: '005',
-            imgUrl: 'https://picbed.qunarzz.com/c65b3bb7571a6bd62df669213e44b84d.png',
-            desc: '一日游'
-          },
-          {
-            id: '006',
-            imgUrl: 'https://picbed.qunarzz.com/f6bb08a239ce1b038204120a8d1e4669.png',
-            desc: '特惠酒店'
-          },
-          {
-            id: '007',
-            imgUrl: 'https://picbed.qunarzz.com/799d9d090d1625a854194460c8849fee.png',
-            desc: '邮轮'
-          },
-          {
-            id: '008',
-            imgUrl: 'https://picbed.qunarzz.com/25e3b9f17a21a6e0113c57a23ffccde4.png',
-            desc: '周边短途'
-          },
-          {
-            id: '009',
-            imgUrl: 'https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png',
-            desc: '旅游团购'
-          }
-      ]
+      }
     }
   },
   computed: {

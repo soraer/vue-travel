@@ -23,34 +23,12 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data () {
       return {
-          list: [
-              {
-                  id: '001',
-                  imgUrl: 'https://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_256x160_6b62ea82.jpg',
-                  title: '标题一',
-                  desc: '描述一'
-              },
-              {
-                  id: '002',
-                  imgUrl: 'https://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_256x160_14e8c382.jpg',
-                  title: '标题二',
-                  desc: '描述二'
-              },
-              {
-                  id: '003',
-                  imgUrl: 'https://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_256x160_a6703da7.jpg',
-                  title: '标题三',
-                  desc: '描述三'
-              },
-              {
-                  id: '004',
-                  imgUrl: 'https://img1.qunarzz.com/sight/p0/1507/44/2fef900d9523f298e4c0ee5bb34be06e.water.jpg_256x160_af81c644.jpg',
-                  title: '标题四',
-                  desc: '描述四'
-              }
-          ]
+          
       }
   }
 }
