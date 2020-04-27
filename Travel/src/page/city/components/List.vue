@@ -42,14 +42,42 @@
           <div class="item border-bottom">北京</div>
           <div class="item border-bottom">北京</div>
         </div>
+        <div class="title border-topbottom">2</div>
+        <div class="item-list">
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+        </div>
+        <div class="title border-topbottom">3</div>
+        <div class="item-list">
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+          <div class="item border-bottom">北京</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  }
 }
 </script>
 
