@@ -21,7 +21,11 @@ export default {
     return {
       touchStatus: false,
       startY: 0,
+      timeOut: null
     };
+  },
+  updated() {
+    const startY = this.$refs["A"][0].offsetTop;
   },
   methods: {
     clickEvent: function(e) {
@@ -31,26 +35,31 @@ export default {
       this.touchStatus = true;
     },
     handleTouchMove(e) {
-      if (this.touchStatus) {
-        const touchY = e.touches[0].clientY - 79;
-        const index = Math.floor((touchY - this.startY) / 20);
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit("change", this.letters[index]);
-        }
+      if (this.timeOut) {
+        clearTimeout(this.timeOut);
       }
+      this.timeOut = setTimeout(() => {
+        if (this.touchStatus) {
+          const touchY = e.touches[0].clientY - 79;
+          const index = Math.floor((touchY - this.startY) / 20);
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit("change", this.letters[index]);
+          }
+        }
+      }, 16);
     },
     handleTouchEnd() {
       this.touchStatus = false;
     }
   },
   computed: {
-      letters () {
-          const letters = []
-          for (let i in this.cityList) {
-              letters.push(i)
-          }
-          return letters
+    letters() {
+      const letters = [];
+      for (let i in this.cityList) {
+        letters.push(i);
       }
+      return letters;
+    }
   }
 };
 </script>
