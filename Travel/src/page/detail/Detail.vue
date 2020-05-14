@@ -1,58 +1,62 @@
 <template>
   <div>
-    <detail-banner 
-                :sightName="sightName"
-                :bannerImg="bannerImg"
-                :bannerImgs="gallaryImgs">
-    </detail-banner>
+    <detail-banner :sightName="this.sightName" :bannerImg="this.bannerImg" :bannerImgs="this.gallaryImgs"></detail-banner>
     <detail-header></detail-header>
+    <div class="content">
+      <detail-list :list="this.list"></detail-list>
+    </div>
   </div>
 </template>
 
 <script>
-import DetailBanner from './components/Banner'
-import DetailHeader from './components/Header'
-// import DetailList from './components/List'
-import axios from 'axios'
+import DetailBanner from "./components/Banner";
+import DetailHeader from "./components/Header";
+import DetailList from "./components/List";
+import axios from "axios";
 export default {
-  name: 'Detail',
+  name: "Detail",
   components: {
     DetailBanner,
     DetailHeader,
-    // DetailList
+    DetailList
   },
-  data () {
+  data() {
     return {
-      sightName: '',
-      bannerImg: '',
+      sightName: "",
+      bannerImg: "",
       gallaryImgs: [],
       list: []
-    }
+    };
   },
   methods: {
-    getDetailInfo () {
-      axios.get('/api/detail.json', {
-        params: {
-          id: this.$route.params.id
-        }
-      }).then(this.handleGetDataSucc)
+    getDetailInfo() {
+      axios
+        .get("/api/detail.json", {
+          params: {
+            id: this.$route.params.id
+          }
+        })
+        .then(this.handleGetDataSucc);
     },
-    handleGetDataSucc (res) {
-      res = res.data
+    handleGetDataSucc(res) {
+      res = res.data;
       if (res.ret && res.data) {
-        const data = res.data
-        this.sightName = data.sightName
-        this.bannerImg = data.bannerImg
-        this.gallaryImgs = data.gallaryImgs
-        this.list = data.categoryList
+        const data = res.data;
+        this.sightName = data.sightName;
+        this.bannerImg = data.bannerImg;
+        this.gallaryImgs = data.gallaryImgs;
+        this.list = data.categoryList;
       }
     }
   },
-  mounted () {
-    this.getDetailInfo()
+  mounted() {
+    this.getDetailInfo();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus"></style> 
+<style lang="stylus" scoped>
+  .content
+    height: 50rem
+</style>

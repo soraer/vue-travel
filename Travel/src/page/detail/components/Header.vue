@@ -13,7 +13,6 @@
       </router-link>
       景点详情
     </div>
-    <div style="height: 100rem"></div>
   </div>
 </template>
 
