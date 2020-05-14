@@ -3,20 +3,22 @@
     <detail-banner 
                 :sightName="sightName"
                 :bannerImg="bannerImg"
-                :bannerImgs="gallaryImgs"></detail-banner>
+                :bannerImgs="gallaryImgs">
+    </detail-banner>
+    <detail-header></detail-header>
   </div>
 </template>
 
 <script>
 import DetailBanner from './components/Banner'
-// import DetailHeader from './components/Header'
+import DetailHeader from './components/Header'
 // import DetailList from './components/List'
 import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
     DetailBanner,
-    // DetailHeader,
+    DetailHeader,
     // DetailList
   },
   data () {
